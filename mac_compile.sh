@@ -1,6 +1,3 @@
 
-GLFWDIR="/Users/msmith/.local"
-cd src
-g++ -I"$GLFWDIR/include" -L"$GLFWDIR"/lib -framework carbon -framework iokit -framework cocoa -framework opengl -framework corevideo -lglfw3 main.cpp Framework.cpp plot.cpp world.cpp character.cpp plotwindow.cpp background.cpp dynamicobject.cpp plotcamera.cpp plotinteractor.cpp -o ../build/plot_window
-cd ..
-cp shaders/* build/
+GLFWDIR=$(realpath ~/local)
+g++ -I"$GLFWDIR/include" -L"$GLFWDIR"/lib -framework OpenGL -framework Cocoa -framework IOKit -framework QuartzCore -lglfw3 src/main.cpp src/Framework.cpp src/plot.cpp src/world.cpp src/character.cpp src/plotwindow.cpp src/background.cpp src/dynamicobject.cpp src/plotcamera.cpp src/plotinteractor.cpp -o build/plot_window

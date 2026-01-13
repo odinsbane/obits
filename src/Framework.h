@@ -1,17 +1,16 @@
 #ifndef FRAMEWORK_H
 #define FRAMEWORK_H
-#include "glad/glad.h"
+
 #ifndef __APPLE__
-#define GLFW_INCLUDE_GLCOREARB
-#define GLFW_NO_GLU
-#include "GLFW/glfw3.h"
-#define SHADER_VERSION_STRING "#version 150\n\n"
+#include "glad/glad.h"
 #else
 #define GLFW_INCLUDE_GLCOREARB
 #define GLFW_NO_GLU
-#include "GLFW/glfw3.h"
-#define SHADER_VERSION_STRING "#version 150\n\n"
 #endif
+#define GL_SILENCE_DEPRECATION 0
+#include "GLFW/glfw3.h"
+#define SHADER_VERSION_STRING "#version 410\n\n"
+
 
 
 #include <vector>

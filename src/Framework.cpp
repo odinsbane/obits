@@ -46,6 +46,7 @@ namespace Framework
 		std::stringstream shaderData;
         shaderData << SHADER_VERSION_STRING;
 		shaderData << shaderFile.rdbuf();
+
 		shaderFile.close();
 		
 
@@ -119,8 +120,8 @@ GLFWwindow* initializeWindow(){
     }
         
         
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     window = glfwCreateWindow(640, 480, "Orbits", NULL, NULL);
@@ -128,12 +129,12 @@ GLFWwindow* initializeWindow(){
     printf("to\n");
     glfwMakeContextCurrent(window);
 
-    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
-    {
-        glfwTerminate();
-        printf("Failed to initialize OpenGL context\n");
-        return 0;
-    }
+    //if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+    //{
+    //    glfwTerminate();
+    //    printf("Failed to initialize OpenGL context\n");
+    //    return 0;
+    //}
 
 	if (!window)
 	{
